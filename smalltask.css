@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.control-button{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: #2195f38a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.control-button span{
+  color: white;
+  font-size: 40px;
+  background-color: #f44336;
+  padding: 15px 25px;
+  cursor: pointer;
+}
+.info-content{
+  width: 1080px;
+  margin: 20px auto 0;
+  background-color: #f6f6f6;
+  font-size: 24px;
+  padding: 20px;
+  overflow: hidden;
+  border: 2px solid #2196f3;
+}
+.info-content .name{
+  float: left;
+  width: 50%;
+}
+.info-content .tries{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+.memory-game-blocks{
+  display: flex;
+  width: 1100px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+.game-block{
+  height: 200px;
+  transition: all 0.5s;
+  transform-style:preserve-3d;
+  cursor: pointer;
+  position: relative;
+  flex: 1 0 200px;
+  margin: 0 10px 20px;
+}
+.game-block .front{
+  background-color: #333;
+  line-height: 200px;
+}
+.game-block .front::before{
+  content: "?";
+  color: white;
+  font-size: 140px;
+  font-weight: bold;
+}
+.game-block .back{
+  background-color: #607d88;
+  transform: rotateY(180deg);
+}
+.game-block img{
+  max-width: 100%;
+  height: 140px;
+  margin: 30px ;
+}
+.game-block .face{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  /* عشان يخفي الصور نفسها  */
+  backface-visibility: hidden;
+  border: 5px solid #2196f3;
+}
+.rotate,.has-match{
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+.no-clicking{
+  pointer-events: none;
+}
+.Success{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2196f3;
+}
